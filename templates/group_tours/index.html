@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>GroupTours</h1>
+</div>
+<ul class="list-unstyled list-inline">
+  <li>
+    <%= linkTo(newGroupToursPath(), {class: "btn btn-primary"}) { %>
+      Create New GroupTour
+    <% } %>
+  </li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+  <th>GroupID</th>
+    <th>TourID</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (groupTour) in groupTours { %>
+      <tr>
+      <td><%= groupTour.GroupID %></td>
+        <td><%= groupTour.TourID %></td>
+        <td>
+          <div class="pull-right">
+            <%= linkTo(groupTourPath({ group_tour_id: groupTour.ID }), {class: "btn btn-info", body: "View"}) %>
+            <%= linkTo(editGroupTourPath({ group_tour_id: groupTour.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+            <%= linkTo(groupTourPath({ group_tour_id: groupTour.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

@@ -1,0 +1,8 @@
+create_table("tours") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("title", "string", {})
+	t.Column("desc", "string", {})
+	t.Column("image_main", "string", {})
+	t.Column("content", "text", {})
+	t.Timestamps()
+}

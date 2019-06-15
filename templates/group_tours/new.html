@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>New GroupTour</h1>
+</div>
+
+<%= formFor(groupTour, {action: groupToursPath(), method: "POST"}) { %>
+  <%= partial("group_tours/form.html") %>
+  <%= linkTo(groupToursPath(), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>

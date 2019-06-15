@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Edit Tour</h1>
+</div>
+
+<%= formFor(tour, {action: tourPath({ tour_id: tour.ID }), method: "PUT"}) { %>
+  <%= partial("tours/form.html") %>
+  <%= linkTo(tourPath({ tour_id: tour.ID }), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>

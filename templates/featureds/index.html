@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Featureds</h1>
+</div>
+<ul class="list-unstyled list-inline">
+  <li>
+    <%= linkTo(newFeaturedsPath(), {class: "btn btn-primary"}) { %>
+      Create New Featured
+    <% } %>
+  </li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+  <th>TourID</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (featured) in featureds { %>
+      <tr>
+      <td><%= featured.TourID %></td>
+        <td>
+          <div class="pull-right">
+            <%= linkTo(featuredPath({ featured_id: featured.ID }), {class: "btn btn-info", body: "View"}) %>
+            <%= linkTo(editFeaturedPath({ featured_id: featured.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+            <%= linkTo(featuredPath({ featured_id: featured.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

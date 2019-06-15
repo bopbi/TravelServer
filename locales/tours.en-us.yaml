@@ -1,0 +1,6 @@
+- id: "tour.created.success"
+  translation: "Tour was successfully created."
+- id: "tour.updated.success"
+  translation: "Tour was successfully updated."
+- id: "tour.destroyed.success"
+  translation: "Tour was successfully destroyed."

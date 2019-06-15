@@ -1,0 +1,6 @@
+create_table("groups") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("title", "string", {})
+	t.Column("image_main", "string", {})
+	t.Timestamps()
+}

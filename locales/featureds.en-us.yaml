@@ -1,0 +1,6 @@
+- id: "featured.created.success"
+  translation: "Featured was successfully created."
+- id: "featured.updated.success"
+  translation: "Featured was successfully updated."
+- id: "featured.destroyed.success"
+  translation: "Featured was successfully destroyed."

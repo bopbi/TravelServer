@@ -1,0 +1,6 @@
+- id: "group_tour.created.success"
+  translation: "GroupTour was successfully created."
+- id: "group_tour.updated.success"
+  translation: "GroupTour was successfully updated."
+- id: "group_tour.destroyed.success"
+  translation: "GroupTour was successfully destroyed."

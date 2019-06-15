@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>GroupTour#Show</h1>
+</div>
+
+<ul class="list-unstyled list-inline">
+  <li class="list-inline-item">
+    <%= linkTo(groupToursPath(), {class: "btn btn-info"}) { %>
+      Back to all GroupTours
+    <% } %>
+  </li>
+  <li class="list-inline-item">
+    <%= linkTo(editGroupTourPath({ group_tour_id: groupTour.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+  </li>
+  <li class="list-inline-item">
+    <%= linkTo(groupTourPath({ group_tour_id: groupTour.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+  </li>
+</ul>
+
+<p>
+  <strong>GroupID</strong>: <%= groupTour.GroupID %>
+</p>
+<p>
+  <strong>TourID</strong>: <%= groupTour.TourID %>
+</p>
