@@ -13,8 +13,8 @@ type GroupTour struct {
 	ID        uuid.UUID `json:"id" db:"id"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
-	GroupID   string    `json:"group_id" db:"group_id"`
-	TourID    string    `json:"tour_id" db:"tour_id"`
+	GroupID   uuid.UUID `json:"group_id" db:"group_id"`
+	TourID    uuid.UUID `json:"tour_id" db:"tour_id"`
 }
 
 // String is not required by pop and may be deleted
@@ -36,8 +36,8 @@ func (g GroupTours) String() string {
 // This method is not required and may be deleted.
 func (g *GroupTour) Validate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.Validate(
-		&validators.StringIsPresent{Field: g.GroupID, Name: "GroupID"},
-		&validators.StringIsPresent{Field: g.TourID, Name: "TourID"},
+		&validators.UUIDIsPresent{Field: g.GroupID, Name: "GroupID"},
+		&validators.UUIDIsPresent{Field: g.TourID, Name: "TourID"},
 	), nil
 }
 

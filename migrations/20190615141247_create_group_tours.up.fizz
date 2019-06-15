@@ -1,6 +1,6 @@
 create_table("group_tours") {
 	t.Column("id", "uuid", {primary: true})
-	t.Column("group_id", "string", {})
-	t.Column("tour_id", "string", {})
+	t.Column("group_id", "uuid", {})
+	t.Column("tour_id", "uuid", {})
 	t.Timestamps()
 }

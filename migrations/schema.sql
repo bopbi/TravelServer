@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS "tours" (
 );
 CREATE TABLE IF NOT EXISTS "featureds" (
 "id" TEXT PRIMARY KEY,
-"tour_id" TEXT NOT NULL,
+"tour_id" char(36) NOT NULL,
 "created_at" DATETIME NOT NULL,
 "updated_at" DATETIME NOT NULL
 );
@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS "groups" (
 );
 CREATE TABLE IF NOT EXISTS "group_tours" (
 "id" TEXT PRIMARY KEY,
-"group_id" TEXT NOT NULL,
-"tour_id" TEXT NOT NULL,
+"group_id" char(36) NOT NULL,
+"tour_id" char(36) NOT NULL,
 "created_at" DATETIME NOT NULL,
 "updated_at" DATETIME NOT NULL
 );

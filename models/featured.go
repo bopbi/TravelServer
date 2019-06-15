@@ -13,7 +13,7 @@ type Featured struct {
 	ID        uuid.UUID `json:"id" db:"id"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
-	TourID    string    `json:"tour_id" db:"tour_id"`
+	TourID    uuid.UUID `json:"tour_id" db:"tour_id"`
 }
 
 // String is not required by pop and may be deleted
@@ -35,7 +35,7 @@ func (f Featureds) String() string {
 // This method is not required and may be deleted.
 func (f *Featured) Validate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.Validate(
-		&validators.StringIsPresent{Field: f.TourID, Name: "TourID"},
+		&validators.UUIDIsPresent{Field: f.TourID, Name: "TourID"},
 	), nil
 }
 
