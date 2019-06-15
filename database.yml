@@ -1,13 +1,11 @@
 development:
-  dialect: postgres
-  database: travel_server_development
-  user: postgres
-  password: postgres
-  host: 127.0.0.1
-  pool: 5
+  dialect: sqlite
+  database: {{env "GOPATH" }}/src/github.com/bopbi/travel_server/db_development.sqlite
 
 test:
-  url: {{envOr "TEST_DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/travel_server_test?sslmode=disable"}}
+  dialect: sqlite
+  database: {{env "GOPATH" }}/src/github.com/bopbi/travel_server/db_test.sqlite
 
 production:
-  url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/travel_server_production?sslmode=disable"}}
+  dialect: sqlite
+  database: {{env "GOPATH" }}/src/github.com/bopbi/travel_server/db_production.sqlite
